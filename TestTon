@@ -1,0 +1,28 @@
+package loopExperiment;
+
+import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.SourceDataLine;
+
+public class TestTon {
+
+    public void playToneTest() throws LineUnavailableException, InterruptedException {
+
+        byte[] buf = new byte[ 1 ];;
+        AudioFormat audioFormat = new AudioFormat( (float )44100, 8, 1, true, false );
+        SourceDataLine sourceDataLine = AudioSystem.getSourceDataLine( audioFormat );
+        sourceDataLine.open();
+        sourceDataLine.start();
+        for( int i = 0; i < 1000 * (float )44100 / 1000; i++ )
+        {
+            double angle = i / ( (float )44100 / 40 ) * 2.0 * Math.PI;
+            buf[ 0 ] = (byte )( Math.sin( angle ) * 100 );
+            sourceDataLine.write( buf, 0, 1 );
+        }
+        sourceDataLine.drain();
+        sourceDataLine.stop();
+
+    }
+    }
+

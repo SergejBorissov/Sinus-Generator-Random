@@ -1,0 +1,200 @@
+package loopExperiment;
+
+import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.SourceDataLine;
+
+public class TonQuelle {
+
+
+    public void playTone1() throws LineUnavailableException {
+        byte[] buf3 = new byte[ 1 ];;
+        AudioFormat af3 = new AudioFormat( (float )38000, 8, 1, true, false );
+        SourceDataLine sd3 = AudioSystem.getSourceDataLine( af3 );
+        sd3.open();
+        sd3.start();
+        for( int i = 0; i < 1000 * (float )44100 / 1000; i++ ) {
+            double angle = i / ( (float )44100 / 229) * 2.0 * Math.PI;
+            buf3[ 0 ] = (byte )( Math.sin( angle ) * 100 );
+            sd3.write( buf3, 0, 1 );
+        }
+
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void playTone2() throws LineUnavailableException {
+        byte[] buf2 = new byte[ 1 ];;
+        AudioFormat af2 = new AudioFormat( (float )44100, 8, 1, true, false );
+        SourceDataLine sd2 = AudioSystem.getSourceDataLine( af2 );
+        sd2.open();
+        sd2.start();
+        for( int i = 0; i < 1000 * (float )44100 / 1000; i++ ) {
+            double angle = i / ( (float )44100 / 277 ) * 2.0 * Math.PI;
+            buf2[ 0 ] = (byte )( Math.sin( angle ) * 100 );
+            sd2.write( buf2, 0, 1 );
+        }
+        sd2.drain();
+        sd2.stop();
+
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void playTone3() throws LineUnavailableException {
+        byte[] buf3 = new byte[ 1 ];;
+        AudioFormat af3 = new AudioFormat( (float )38000, 8, 1, true, false );
+        SourceDataLine sd3 = AudioSystem.getSourceDataLine( af3 );
+        sd3.open();
+        sd3.start();
+        for( int i = 0; i < 1000 * (float )44100 / 1000; i++ ) {
+            double angle = i / ( (float )44100 / 220 ) * 2.0 * Math.PI;
+            buf3[ 0 ] = (byte )( Math.sin( angle ) * 100 );
+            sd3.write( buf3, 0, 1 );
+        }
+
+        sd3.drain();
+        sd3.stop();
+
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void playTone4() throws LineUnavailableException {
+        byte[] buf3 = new byte[ 1 ];;
+        AudioFormat af3 = new AudioFormat( (float )38000, 8, 1, true, false );
+        SourceDataLine sd3 = AudioSystem.getSourceDataLine( af3 );
+        sd3.open();
+        sd3.start();
+        for( int i = 0; i < 1000 * (float )44100 / 1000; i++ ) {
+            double angle = i / ( (float )44100 / 180 ) * 2.0 * Math.PI;
+            buf3[ 0 ] = (byte )( Math.sin( angle ) * 100 );
+            sd3.write( buf3, 0, 1 );
+        }
+
+        sd3.drain();
+        sd3.stop();
+
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void playTone5() throws LineUnavailableException {
+        byte[] buf2 = new byte[ 1 ];;
+        AudioFormat af2 = new AudioFormat( (float )54100, 8, 1, true, false );
+        SourceDataLine sd2 = AudioSystem.getSourceDataLine( af2 );
+        sd2.open();
+        sd2.start();
+        for( int i = 0; i < 1000 * (float )44100 / 1000; i++ ) {
+            double angle = i / ( (float )44100 / 330 ) * 2.0 * Math.PI;
+            buf2[ 0 ] = (byte )( Math.sin( angle ) * 100 );
+            sd2.write( buf2, 0, 1 );
+        }
+        sd2.drain();
+        sd2.stop();
+
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    } public void playTone6() throws LineUnavailableException {
+        byte[] buf3 = new byte[ 1 ];;
+        AudioFormat af3 = new AudioFormat( (float )38000, 8, 1, true, false );
+        SourceDataLine sd3 = AudioSystem.getSourceDataLine( af3 );
+        sd3.open();
+        sd3.start();
+        for( int i = 0; i < 1000 * (float )44100 / 1000; i++ ) {
+            double angle = i / ( (float )44100 / 120 ) * 2.0 * Math.PI;
+            buf3[ 0 ] = (byte )( Math.sin( angle ) * 100 );
+            sd3.write( buf3, 0, 1 );
+        }
+
+        sd3.drain();
+        sd3.stop();
+
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+    public void playTone7() throws LineUnavailableException {
+        byte[] buf2 = new byte[ 1 ];;
+        AudioFormat af2 = new AudioFormat( (float )74100, 8, 1, true, false );
+        SourceDataLine sd2 = AudioSystem.getSourceDataLine( af2 );
+        sd2.open();
+        sd2.start();
+        for( int i = 0; i < 1000 * (float )44100 / 1000; i++ ) {
+            double angle = i / ( (float )44100 / 139 ) * 2.0 * Math.PI;
+            buf2[ 0 ] = (byte )( Math.sin( angle ) * 100 );
+            sd2.write( buf2, 0, 1 );
+        }
+        sd2.drain();
+        sd2.stop();
+
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+    public void playTone8() throws LineUnavailableException {
+        byte[] buf2 = new byte[ 1 ];;
+        AudioFormat af2 = new AudioFormat( (float )74100, 8, 1, true, false );
+        SourceDataLine sd2 = AudioSystem.getSourceDataLine( af2 );
+        sd2.open();
+        sd2.start();
+        for( int i = 0; i < 1000 * (float )44100 / 1000; i++ ) {
+            double angle = i / ( (float )44100 / 333 ) * 2.0 * Math.PI;
+            buf2[ 0 ] = (byte )( Math.sin( angle ) * 100 );
+            sd2.write( buf2, 0, 1 );
+        }
+        sd2.drain();
+        sd2.stop();
+
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void playTone9() throws LineUnavailableException {
+        byte[] buf2 = new byte[ 1 ];;
+        AudioFormat af2 = new AudioFormat( (float )45000, 8, 1, true, false );
+        SourceDataLine sd2 = AudioSystem.getSourceDataLine( af2 );
+        sd2.open();
+        sd2.start();
+        for( int i = 0; i < 1000 * (float )44100 / 1000; i++ ) {
+            double angle = i / ( (float )44100 / 120 ) * 3.0 * Math.PI;
+            buf2[ 0 ] = (byte )( Math.sin( angle ) * 100 );
+            sd2.write( buf2, 0, 1 );
+        }
+        sd2.drain();
+        sd2.stop();
+
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+}

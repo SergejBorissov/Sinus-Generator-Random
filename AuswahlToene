@@ -1,0 +1,63 @@
+package loopExperiment;
+
+import javax.sound.sampled.LineUnavailableException;
+
+public class AuswahlToene {
+
+    TonQuelle tonQuelle = new TonQuelle();
+    ZufallsZahlenGenerator zahlenGenerator = new ZufallsZahlenGenerator();
+
+    public void spieleTon() throws LineUnavailableException, InterruptedException {
+
+
+        for (int i = 0; i < 10; i++) {
+
+            switch (zahlenGenerator.gebeZufallsZahl()) {
+
+                case 0:
+                    System.out.println("Spiele Ton 0");
+                    tonQuelle.playTone3();
+                    break;
+
+                case 1:
+                    System.out.println("Spiele Ton 1");
+                    tonQuelle.playTone1();
+                    break;
+                case 2:
+                    tonQuelle.playTone2();
+                    System.out.println("Ton2");
+                    break;
+
+                case 3:
+                    System.out.println("Spiele Ton 3");
+                    tonQuelle.playTone4();
+                case 4:
+                    System.out.println("Spiele Ton 4");
+                    tonQuelle.playTone7();
+                    break;
+                case 5:
+                    System.out.println("Spiele Ton 5");
+                    tonQuelle.playTone5();
+                    break;
+                case 6:
+                    System.out.println("Spiele Ton 6");
+                    tonQuelle.playTone6();
+                    break;
+                case 7:
+                    System.out.println("Spiele Ton 7");
+                    tonQuelle.playTone8();
+                    break;
+                case 8:
+                    System.out.println("SPiele ton 9");
+                    tonQuelle.playTone9();
+                    break;
+                default:
+                    System.out.println("Über dem Zahlenbereich");
+                    break;
+
+            }
+        }
+
+    }
+
+}

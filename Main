@@ -1,0 +1,24 @@
+package loopExperiment;
+
+import javax.sound.sampled.LineUnavailableException;
+
+public class Main {
+
+    public static void main(String[] args) throws LineUnavailableException, InterruptedException {
+
+
+        AuswahlToene auswahlToene = new AuswahlToene();
+        ZufallsZahlenGenerator zahlen = new ZufallsZahlenGenerator();
+        TonQuelle tonQuelle = new TonQuelle();
+        TestTon testTon = new TestTon();
+        TonBass tonBass = new TonBass();
+
+       // tonBass.playBass2();
+
+       auswahlToene.spieleTon();
+       //testTon.playToneTest();
+
+
+
+    }
+}

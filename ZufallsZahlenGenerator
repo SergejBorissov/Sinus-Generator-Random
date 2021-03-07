@@ -1,0 +1,12 @@
+package loopExperiment;
+
+import java.util.Random;
+
+public class ZufallsZahlenGenerator {
+
+    public int gebeZufallsZahl(){
+        Random random = new Random();
+        return random.nextInt(9);
+    }
+
+}
